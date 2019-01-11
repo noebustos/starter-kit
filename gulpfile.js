@@ -45,11 +45,12 @@ gulp.task('browser-sync', function(){
 })
 
 
-
+//what will be runned as default when we "npm run watch"
 gulp.task('default', ['sass', 'webpack', 'browser-sync'], function(){
   gulp.watch('./assets/scss/**/*', ['sass']);
   gulp.watch('./assets/js/**/*', ['webpack']);
   gulp.watch('./public/*.html', reload);
 });
 
+// use this to decrease file size
 gulp.task('production', ['sass:minify'])
